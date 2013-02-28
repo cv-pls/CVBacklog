@@ -10,6 +10,8 @@ ini_set('display_errors', isset($_GET['debug']));
 ini_set('display_startup_errors', isset($_GET['debug']));
 ini_set('arg_separator.output', '&');
 ini_set('zlib.output_compression', 1);
+ini_set('date_default_timezone_set', 'Europe/Amsterdam');
+set_time_limit(0);
 
 stream_context_set_default(
     array(
@@ -32,5 +34,5 @@ $backlog = new Cached(
     $appRoot('/app/cache')
 );
 $backlog->defineCachingForMethod('findAll', 3600);
-$controller = new BacklogController($backlog, new Url('http://cvbacklog.herokuapp.com'));
+$controller = new BacklogController($backlog, new Url('http://www.backlog.localhost'));
 echo $controller->handleRequest();

@@ -13,7 +13,8 @@ class Webpage extends Url
         'q' => 'tag:cv-pls',
         'page' => 0,
         'pagesize' => 100,
-        'sort' => 'newest'
+        'sort' => 'newest',
+        'room' => 25318
     );
 
     /**
